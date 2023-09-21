@@ -31,6 +31,6 @@ app.use('/api/v1/product',productRoutes)
 
 const PORT = process.env.PORT;
 connectDB().then(()=>{
- app.listen(process.env.PORT,()={
+ app.listen(process.env.PORT,()=>{
     console.log(`server running ${PORT}`.bgCyan);
  })})
