@@ -10,7 +10,7 @@ import productRoutes from './routes/productRoutes.js';
 import path from 'path'
 import { fileURLToPath} from 'url'
 dotenv.config();
-connectDB();
+
 const __filename=fileURLToPath(import.meta.url);
 const __dirname= path.dirname(__filename)
  const app = express();
@@ -30,6 +30,7 @@ app.use('/api/v1/product',productRoutes)
    })
 
 const PORT = process.env.PORT;
- app.listen(PORT,()=>{
+connectDB().then(()=>{
+ app.listen(process.env.PORT,()={
     console.log(`server running ${PORT}`.bgCyan);
- })
+ })})
